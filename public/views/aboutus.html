@@ -1,0 +1,36 @@
+ <header class="intro-header" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>About Me</h1>
+                        <hr class="small">
+                        <span class="subheading">This is what I do.</span>
+                                <!-- <p>
+                              <form method="post" action="/upload" enctype="multipart/form-data">
+                                <input type="file" name="image" class="file" id="image"/><br/><br/>
+                                <input type="submit" value="Upload" class="btn btn-info"/><br/><span id="message"></span>
+                              </form><br/><br/><br/>
+                              <div id="download">
+                                <table class="table">
+                                  <thead>
+                                    <th>File Name</th>
+                                    <th>Download</th>
+                                  </thead>
+                                  <tbody></tbody>
+                                </table>
+                              </div>
+                        </p> -->
+                        <form            id  =  "uploadForm"
+                                         enctype   =  "multipart/form-data"
+                                         action    =  "/api/photo"
+                                         method    =  "post" >
+                                                                               
+                                    <input type="file" name="userPhoto" />
+                                    <input type="submit" value="Upload Image" name="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

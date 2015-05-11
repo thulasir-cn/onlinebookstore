@@ -1,0 +1,48 @@
+<html>
+<head>
+	<style type="text/css">
+	#bookdetails{
+		margin-left: 200px;
+	}
+	#bookListWrapper{
+		width: 100%;
+    padding: 10px;
+    position: relative;
+    top: 50px;
+	}
+	#bookListWrapper .book {
+    border: 1px solid gray;
+    padding: 10px;
+    margin-bottom: 10px;    
+	}
+	#bookListWrapper .book .book-details {
+    margin-left: 160px;
+	}
+	</style>
+</head>
+<body>
+<div id="bookListWrapper">
+	<form class="form-search" role="form">
+</form>
+	<ul class="list-unstyled">
+		<li class="book" ng-repeat="book in books"
+			style="background: white url('imgs/{{book.imgUrl}}') no-repeat">
+			<div class="book-details clearfix" id="bookdetails">
+				
+				<h3><a href="#/link1">{{book.name}}</a></h3>	
+				<p>{{book.price | currency:'Rs.'}}</p>
+				<ul  class="list-unstyled list-inline">
+					<li>Rating: {{book.rating}}</li>
+					<li>Binding: {{book.binding}}</li>
+					<li>Publisher: {{book.publisher}}</li>
+					<li>Released: {{book.releaseDate}}</li>
+					
+				</ul>
+				<button class="btn btn-info pull-right" ng-click="buy(book)">Buy</button>
+				<button class="btn btn-info pull-right" ng-click="addToKart(book)">Add to Kart</button>
+			</div>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

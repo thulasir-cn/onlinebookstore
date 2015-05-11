@@ -1,0 +1,47 @@
+<html>
+<head>
+	<style type="text/css">
+	#bookdetails{
+		margin-left: 200px;
+	}
+	#bookListWrapper{
+		width: 100%;
+    padding: 10px;
+    position: relative;
+    top: 50px;
+	}
+	#bookListWrapper .book {
+    border: 1px solid gray;
+    padding: 10px;
+    margin-bottom: 10px;    
+	}
+	#bookListWrapper .book .book-details {
+    margin-left: 160px;
+	}
+	</style>
+</head>
+<body>
+<div id="bookListWrapper">
+	<p>Please click on buy button to buy the book.</p>
+	<ul class="list-unstyled">
+		<li class="book" ng-repeat="book in books"
+			style="background: white url('imgs/{{book.imgUrl}}') no-repeat">
+			<!-- <p>Quantity:{{}}</p> -->
+			<div class="book-details clearfix">
+				<h3>{{book.name}}</h3>
+				<p>{{book.price}}</p>
+				<ul class="list-unstyled list-inline">
+					<li>Rating: {{book.rating}}</li>
+					<li>Binding: {{book.binding}}</li>
+					<li>Publisher: {{book.publisher}}</li>
+					<li>Released: {{book.releaseDate}}</li>
+					<!-- <li><img src="location.jpg">:<a href="https://www.google.co.in/{{book.avilableplace}}"></a> </li> -->
+				</ul>
+				<button class="btn btn-info pull-right" ng-click="buy(book)">Buy Product</button>
+				<button class="btn btn-info pull-right" ng-click="remove(book)">Remove</button>
+			</div>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
